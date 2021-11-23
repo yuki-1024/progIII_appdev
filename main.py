@@ -144,11 +144,13 @@ class Circuit:
 
         self.elements[idx].add2circit(d)
 
-
-if __name__ == "__main__":
+def main():
     ids, parsed_input = get_coordinates2.main()
     result = findneighbour.WriteText(ids, parsed_input)
     d = schemdraw.Drawing()
     c = Circuit.parse(result)
     c.show(d)
     d.draw()
+
+if __name__ == "__main__":
+    main()

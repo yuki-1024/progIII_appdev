@@ -1,14 +1,15 @@
 import os
 import cv2
-import cv2.aruco as aruco
+import app
+aruco = cv2.aruco
 
 
 ### --- aruco設定 --- ###
 dict_aruco = aruco.Dictionary_get(aruco.DICT_4X4_50)
 parameters = aruco.DetectorParameters_create()
-img_path_name = "test.png"  # 対象画像の名前
-bace = os.path.dirname(os.path.abspath(__file__))  # 実行ファイルのディレクトリ名
-target_path = os.path.join(bace, img_path_name)  # パスの連結
+
+target_path = app.btn_event.file_name 
+
 image = cv2.imread(target_path)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)

@@ -71,7 +71,7 @@ def GetConnection(elem):
             if elem[elem[i][j]][1] == 0:  # 角のidを0とする
                 for k in range(2, 6):
                     if elem[elem[i][j]][k] >= 0 and elem[elem[i][j]][k] != elem[i][0]:
-                        connected.append(elem[i][0], elem[elem[i][j]][k])
+                        connected.append([elem[i][0], elem[elem[i][j]][k]])
             else:
                 connected.append([elem[i][0], elem[i][j]])
     return(connected)
